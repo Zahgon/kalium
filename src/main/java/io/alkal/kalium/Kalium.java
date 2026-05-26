@@ -2,7 +2,6 @@ package io.alkal.kalium;
 
 import io.alkal.kalium.exceptions.KaliumException;
 import io.alkal.kalium.internals.KaliumBuilder;
-
 import java.util.function.Consumer;
 
 /**
@@ -11,7 +10,6 @@ import java.util.function.Consumer;
  * @author Ziv Salzman
  * Created on 20-Jan-2019
  */
-
 public interface Kalium {
 
     /**
@@ -28,7 +26,7 @@ public interface Kalium {
      * @return a builder
      */
     static KaliumBuilder Builder() {
-        return new KaliumBuilder();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -48,7 +46,6 @@ public interface Kalium {
      */
     void stop();
 
-
     /**
      * Add a reaction object
      * @param reaction an instance of a class with methods annotated with @On annotation
@@ -63,7 +60,6 @@ public interface Kalium {
      * @param <T>        the class of the object that is processed
      */
     <T> void on(Class<T> objectType, Consumer<T> consumer) throws KaliumException;
-
 
     /**
      * Defines a reaction to an object of type T. Use this method for events/object that suppose to be processed by
